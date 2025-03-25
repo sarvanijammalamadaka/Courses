@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            background: linear-gradient(to right, #ddeaff, #fafafa);
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 250px;
+            background: #007bff;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .sidebar ul li:hover {
+            background: #0056b3;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Subtopics</h3>
+        <ul>
+            <li onclick="showContent('Introduction')">What is HTML</li>
+            <li onclick="showContent('javascript')">JavaScript & DOM Manipulation</li>
+            <li onclick="showContent('responsive-design')">Responsive Web Design</li>
+            <li onclick="showContent('frontend')">Frontend Frameworks (React, Vue)</li>
+            <li onclick="showContent('backend')">Backend Development (Node.js, Django)</li>
+        </ul>
+    </div>
+    <div class="content">
+        <h2>Welcome to Web Development</h2>
+        <p>Enhance your skills in building modern websites.</p>
+        <div id="Introduction" class="hidden">
+            <h3>What is HTML</h3>
+            <p><ol>
+                <li>HTML stands for Hyper Text Markup Language</li>
+            <li>HTML is the standard markup language for creating Web pages</li>
+        <li>HTML describes the structure of a Web page</li>
+    <li>HTML consists of a series of elements</li>
+<li>HTML elements tell the browser how to display the content</li>
+<li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</li></ol></p>
+        </div>
+        <div id="javascript" class="hidden">
+            <h3>JavaScript & DOM Manipulation</h3>
+            <p>Understand how to make interactive web pages with JavaScript.</p>
+        </div>
+        <div id="responsive-design" class="hidden">
+            <h3>Responsive Web Design</h3>
+            <p>Make websites adaptable to different screen sizes and devices.</p>
+        </div>
+        <div id="frontend" class="hidden">
+            <h3>Frontend Frameworks</h3>
+            <p>Explore modern frameworks like React and Vue for UI development.</p>
+        </div>
+        <div id="backend" class="hidden">
+            <h3>Backend Development</h3>
+            <p>Learn about server-side programming with Node.js and Django.</p>
+        </div>
+    </div>
+    <script>
+        function showContent(id) {
+            document.querySelectorAll('.content div').forEach(div => div.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
